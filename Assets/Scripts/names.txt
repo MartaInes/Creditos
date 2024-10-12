@@ -1,0 +1,52 @@
+[DEV]
+Germán Castillo
+Fco. Javier
+Paola Martín
+Daniel
+Alejandro
+Ninfa
+Rafa
+Daniel
+Mario
+Javi
+Miguel
+Isma
+Yeisi
+Olegario
+Daniel
+Dani F.
+Diego
+Ricardo
+Ezhor
+David Ojeda
+Gustavo Chico
+[ART]
+Nori
+Ninfa
+Mario
+Alba
+Nacho
+Lucía
+Rosario
+Lucía
+Yeisi
+Olegario
+Marina
+Alberto
+Belu
+Daniel Martín
+[GD]
+Rafa
+Santi
+Paula
+Miya
+Adrián
+Javi
+[MUSIC]
+Alejandro
+Guille
+Miya
+Rafa
+Álvaro Ojeda
+[UI]
+Zahara
