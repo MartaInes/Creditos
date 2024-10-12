@@ -7,15 +7,21 @@ using UnityEngine.Windows;
 public class PlayerMovement : MonoBehaviour
 {
     private float _moveSpeed = 10f;
-    private Vector3 _moveVec = Vector3.zero;
+    private Vector2 _moveVec = Vector2.zero;
+    private Rigidbody2D myRigidBody;
+
+    private void Awake()
+    {
+        myRigidBody = GetComponent<Rigidbody2D>();
+    }
 
     public void OnMove(InputValue input)
     {
-        Vector2 inputVec = input.Get<Vector2>();
-        _moveVec = new Vector3(inputVec.x, inputVec.y, 0);
+        _moveVec = input.Get<Vector2>();
     }
-    public void Update()
+    private void FixedUpdate()
     {
-        transform.Translate(_moveVec * _moveSpeed * Time.deltaTime);
+        myRigidBody.MovePosition(myRigidBody.position + (_moveVec * _moveSpeed * Time.fixedDeltaTime));
+        //transform.Translate(_moveVec * _moveSpeed * Time.deltaTime);
     }
 }
