@@ -20,4 +20,14 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void SelectLevel()
+    {
+        SceneManager.LoadScene("LevelMenu");
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
