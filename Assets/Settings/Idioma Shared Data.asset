@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Key: Settings
     m_Metadata:
       m_Items: []
+  - m_Id: 182924353228800
+    m_Key: mine
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

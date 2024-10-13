@@ -50,6 +50,10 @@ MonoBehaviour:
     m_Localized: Ajustes
     m_Metadata:
       m_Items: []
+  - m_Id: 182924353228800
+    m_Localized: Mio
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
