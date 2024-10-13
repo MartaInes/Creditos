@@ -51,6 +51,18 @@ MonoBehaviour:
     m_Key: mine
     m_Metadata:
       m_Items: []
+  - m_Id: 347295322755072
+    m_Key: Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 347361353682944
+    m_Key: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 347403141533696
+    m_Key: Narrativa
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
