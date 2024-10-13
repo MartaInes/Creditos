@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Introduction");
     }
 
     public void Credits()
@@ -29,5 +29,10 @@ public class MainMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
