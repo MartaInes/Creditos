@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8261479003441522118}
   - component: {fileID: 8740856636468242835}
   m_Layer: 0
-  m_Name: "Boto\u0301n luz"
+  m_Name: Boton luz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a65964faedf7aaa4497c9596e07d0b8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42cc0f72c1acc8448bc49fbcebbccfb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
