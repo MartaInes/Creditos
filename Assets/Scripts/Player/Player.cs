@@ -71,7 +71,5 @@ public class Player : MonoBehaviour
     {
         Light2D globalLight = GameObject.FindAnyObjectByType<Light2D>();
         globalLight.color = new Color(0.1f, 0.05f, 0.05f);
-        GameObject lightSwitchNPC = GameObject.FindGameObjectWithTag("LightSwitchNPC");
-        lightSwitchNPC.GetComponent<Transform>().localScale = new Vector3(2f, 2f, 2f);
     }
 }
