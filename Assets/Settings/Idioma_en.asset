@@ -66,6 +66,18 @@ MonoBehaviour:
     m_Localized: Narrativa
     m_Metadata:
       m_Items: []
+  - m_Id: 375415291531264
+    m_Localized: Programmers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 375473885958144
+    m_Localized: Art 2D
+    m_Metadata:
+      m_Items: []
+  - m_Id: 375519566123008
+    m_Localized: Sound design / OST
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

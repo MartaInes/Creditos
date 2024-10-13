@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChangeMusic : MonoBehaviour
 {
     [SerializeField] AudioSource intro;
-    [SerializeField] AudioSource bgMusic;
+    [SerializeField] List<AudioSource> bgMusic;
 
     private bool audio1Played;
     void Start()
@@ -19,7 +19,11 @@ public class ChangeMusic : MonoBehaviour
         if (!intro.isPlaying && !audio1Played)
         {
             audio1Played = true;
-            bgMusic.Play();
+            foreach (AudioSource source in bgMusic)
+            {
+                source.Play();
+            }
+            
         }
     }
 }
