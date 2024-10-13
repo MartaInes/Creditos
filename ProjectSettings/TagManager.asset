@@ -3,21 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spawn1
+  - Spawn2
+  - Spawn3
+  - Spawn4
+  - Spawn5
+  - Spawn6
+  - LightSwitchNPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Events
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Player1
+  - Player2
+  - Player3
+  - Player4
+  - Player5
+  - Player6
   - 
   - 
   - 
