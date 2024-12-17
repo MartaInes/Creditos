@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
 public class InputHandling : MonoBehaviour
 {
@@ -18,21 +15,37 @@ public class InputHandling : MonoBehaviour
     private void Awake()
     {
     }
-
+    public void OnRespawn()
+    {
+        player1.Respawn();
+        player2.Respawn();
+    }
     public void OnMove1(InputValue input)
     {
-        player1.MoveTo(input.Get<Vector2>());
+        if (player1 != null)
+        {
+            player1.MoveTo(input.Get<Vector2>());
+        }
     }
     public void OnMove2(InputValue input)
     {
-        player2.MoveTo(input.Get<Vector2>());
+        if (player2 != null)
+        {
+            player2.MoveTo(input.Get<Vector2>());
+        }
     }
     public void OnActivate1()
     {
-        player1.Activate();
+        if (player1 != null)
+        {
+            player1.Activate("Team1");
+        }
     }
     public void OnActivate2()
     {
-        player2.Activate();
+        if (player2 != null)
+        {
+            player2.Activate("Team2");
+        }
     }
 }

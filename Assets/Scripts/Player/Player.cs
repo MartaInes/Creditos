@@ -1,14 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 
 public class Player : MonoBehaviour
 {
     private static int playersCounter = 0;
     private static string[] spawnTags = { "Spawn1", "Spawn2", "Spawn3", "Spawn4", "Spawn5", "Spawn6" };
-    private static string[] playerLayers = { "Player1", "Player2", "Player3", "Player4", "Player5", "Player6" };
 
     private float _moveSpeed = 10f;
     private Vector2 _moveVec = Vector2.zero;
@@ -16,23 +13,33 @@ public class Player : MonoBehaviour
     private int playerIndex;
     private GameObject playerChair;
     private Rigidbody2D rigidBody;
+    private GameObject voices;
 
-    private HashSet<string> nearbyActionEvents = new HashSet<string>();
+    private HashSet<GameObject> nearbyActionEvents = new HashSet<GameObject>();
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        voices = gameObject.transform.Find("Voices").gameObject;
         playerIndex = playersCounter;
         playersCounter += 1;
-        playerChair = GameObject.FindWithTag(spawnTags[playerIndex]);
+        playerChair = transform.parent.Find("Chair").gameObject;
 
-        gameObject.layer = LayerMask.NameToLayer(playerLayers[playerIndex]);
+        playerChair.transform.position = GameObject.FindWithTag(spawnTags[playerIndex]).transform.position;
         Respawn();
     }
 
     public void Respawn()
     {
-        gameObject.transform.position = playerChair.gameObject.transform.position;
+        playerChair.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        foreach (Collider2D collider in playerChair.GetComponentsInChildren<Collider2D>(true))
+        {
+            if (!collider.isTrigger)
+            {
+                collider.enabled = false;
+            }
+        }
+        gameObject.transform.position = playerChair.transform.position + new Vector3(0,2.77f,0);
     }
 
     public void MoveTo(Vector2 v)
@@ -45,31 +52,47 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("OnTriggerEnter:" + other.name);
-        nearbyActionEvents.Add(other.name);
+        nearbyActionEvents.Add(other.gameObject);
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("OnTriggerExit:" + other.name);
-        nearbyActionEvents.Remove(other.name);
+        if(other.name == "ChairCollider")
+        {
+            playerChair.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            foreach (Collider2D collider in playerChair.GetComponentsInChildren<Collider2D>(true))
+            {
+                collider.enabled = true;
+            }
+        } else
+        {
+            nearbyActionEvents.Remove(other.gameObject);
+        }
     }
 
-    public void Activate()
+    public void Activate(string tag)
     {
         if (nearbyActionEvents.Count == 0)
         {
             Debug.Log("No Action Events nearby");
         }
-        else if (nearbyActionEvents.Contains("LightSwitch"))
+        List<GameObject> actionEvents = new List<GameObject>(nearbyActionEvents);
+        for (int i = 0; i < actionEvents.Count; i++)
         {
-            Debug.Log("Turn off lights");
-            ActivateLightSwitch();
+            GameObject actionEvent = actionEvents[i];
+            switch (actionEvent.name)
+            {
+                case "Monitor": actionEvent.tag = tag; actionEvent.SetActive(false); break;
+                case "Drawings": actionEvent.tag = tag; actionEvent.SetActive(false); break;
+                case "Piano": actionEvent.tag = tag; actionEvent.SetActive(false); break;
+                case "Scripts": actionEvent.tag = tag; actionEvent.SetActive(false); break;
+                case "Keyboard": actionEvent.tag = tag; actionEvent.SetActive(false); break;
+                case "Trashcan": actionEvent.tag = tag; break;
+                case "LightSwitch": actionEvent.tag = actionEvent.tag.StartsWith("Team") ? "Untagged" : tag; break;
+                case "CandyTable": actionEvent.tag = tag; break;
+                case "NoButton": actionEvent.tag = tag; break;
+                default: continue;
+            }
+            voices.transform.GetChild(Random.Range(0,voices.transform.childCount)).GetComponent<AudioSource>().Play();
         }
-    }
-
-    public void ActivateLightSwitch()
-    {
-        Light2D globalLight = GameObject.FindAnyObjectByType<Light2D>();
-        globalLight.color = new Color(0.1f, 0.05f, 0.05f);
     }
 }

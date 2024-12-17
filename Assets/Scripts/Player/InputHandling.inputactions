@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Respawn",
+                    "type": "Button",
+                    "id": "e792c69d-55c1-4f34-b2e6-4fa5ec6fd8c4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -111,7 +120,7 @@
                 },
                 {
                     "name": "2D Vector",
-                    "id": "ef01303c-917b-403f-a5ca-dd3c58d14754",
+                    "id": "822b746b-a6ff-42f2-95df-143840c4b8b5",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -122,44 +131,44 @@
                 },
                 {
                     "name": "up",
-                    "id": "3ce3b157-e352-4967-b08f-4c15315a294e",
-                    "path": "<Gamepad>/dpad/up",
+                    "id": "edc954ce-3fb8-4371-bb8c-056be8a9047e",
+                    "path": "<Joystick>/stick/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Joystick",
                     "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "bffb8cb8-cbc4-462b-a195-2ac706fee510",
-                    "path": "<Gamepad>/dpad/down",
+                    "id": "142e6037-37ff-463e-9324-ccfab9c155df",
+                    "path": "<Joystick>/stick/down",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Joystick",
                     "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "54ba0ec8-aee4-45db-a75c-929decec0236",
-                    "path": "<Gamepad>/dpad/left",
+                    "id": "60bd7cd0-750b-4a2a-92ed-8dc091746b1d",
+                    "path": "<Joystick>/stick/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Joystick",
                     "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "bb127174-cb48-43a3-ac39-cfe3c36e2aa5",
-                    "path": "<Gamepad>/dpad/right",
+                    "id": "d24131a4-4142-4d2a-8acb-a13f11407633",
+                    "path": "<Joystick>/stick/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Joystick",
                     "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -177,7 +186,7 @@
                 },
                 {
                     "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
+                    "id": "10f52648-ed5f-4a96-9f38-f35fe2bd6b56",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
@@ -188,11 +197,22 @@
                 },
                 {
                     "name": "",
-                    "id": "626578f7-e50f-4335-b74c-c6e3f1346a92",
-                    "path": "<Keyboard>/e",
+                    "id": "bcc4e24d-304e-49bb-ae1e-04cce15c9fad",
+                    "path": "<HID::Twin USB Joystick>/button5",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": ";Joystick",
+                    "action": "Activate1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b77bbc4-3e85-4f96-8484-52de445675a5",
+                    "path": "<HID::Twin USB Joystick>/button7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Joystick",
                     "action": "Activate1",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -264,15 +284,59 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "18b37798-4476-4002-9e34-b7a9d64fb16f",
-                    "path": "<Keyboard>/enter",
+                    "name": "2D Vector",
+                    "id": "b317ba25-5fff-473b-b210-5147dc88ceec",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Activate2",
-                    "isComposite": false,
+                    "groups": "",
+                    "action": "Move2",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "21433e8d-3e76-494a-a834-a650f0356323",
+                    "path": "<HID::Twin USB Joystick>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Joystick",
+                    "action": "Move2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "b07c8660-7840-4d38-bf6b-b71bd1740b0d",
+                    "path": "<HID::Twin USB Joystick>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Joystick",
+                    "action": "Move2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Left",
+                    "id": "08b636b9-dcf7-45d0-a9a5-f9891660808c",
+                    "path": "<HID::Twin USB Joystick>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Joystick",
+                    "action": "Move2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Right",
+                    "id": "910edb85-f875-4161-b2f5-de97ec34225b",
+                    "path": "<HID::Twin USB Joystick>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Joystick",
+                    "action": "Move2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "",
@@ -287,12 +351,45 @@
                 },
                 {
                     "name": "",
-                    "id": "0e45e426-25d7-4ad7-9b52-399f0cfe7fc8",
+                    "id": "a8d3ec13-2a46-4024-aa06-ac3e5dd64527",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Activate2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41bd3be3-9c17-4df5-b033-ccfb1b0ffdf9",
+                    "path": "<HID::Twin USB Joystick>/button6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Joystick",
+                    "action": "Activate2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4afc61f-a81a-428d-ba84-775f1d0a7715",
+                    "path": "<HID::Twin USB Joystick>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Joystick",
+                    "action": "Activate2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a12d77f5-6e89-48e8-8732-2f944733bc1e",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Respawn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
